@@ -1,0 +1,125 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/11/2017, 06:20:42 PM
+    Author     : Alejo
+*/
+
+
+.GRIS{
+
+    color: #FF0000;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #FF0000;
+    width:120px;
+    height:120px;
+    background-image: url("https://github.com/suarezje/semaforosWeb/blob/master/ClienteSemaforoWeb/web/img/Estaticas2/Rojo.png?raw=true");
+}
+
+.ROJO{
+
+    color: #FF0000;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #FF0000;
+    text-decoration: #ffffff;
+    width:120px;
+    height:120px;
+    background-image: url("https://github.com/suarezje/semaforosWeb/blob/master/ClienteSemaforoWeb/web/img/Estaticas2/Rojo.png?raw=true");
+}
+
+
+.AMARILLO{
+
+    color: #FFFF00;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #FFFF00;
+    width:120px;
+    height:120px;
+    background-image: url("https://github.com/suarezje/semaforosWeb/blob/master/ClienteSemaforoWeb/web/img/Estaticas2/Amarillo.png?raw=true");
+}
+
+
+.VERDE{
+
+    color: #00FF00;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #00FF00;
+    width:120px;
+    height:120px;
+    background-image: url("https://github.com/suarezje/semaforosWeb/blob/master/ClienteSemaforoWeb/web/img/Estaticas2/Verde.png?raw=true");
+}
+
+.NEGRO{
+
+    color: #000000;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #000000;
+    width:120px;
+    height:120px;
+}
+
+.INTERMITENTE{
+
+    color: #1014bc;
+    font-weight: bold;
+    background-color: #1014bc;
+    border-color: #1014bc;
+    width:120px;
+    height:120px; 
+        
+}
+
+.INTERMITENTE_ROJO{
+
+    color: #1014bc;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #1014bc;
+    background-image: url("https://raw.githubusercontent.com/suarezje/semaforosWeb/master/ClienteSemaforoWeb/web/img/Intermitentes2/Rojo.gif");
+    width:120px;
+    height:120px; 
+}
+.INTERMITENTE_AMARILLO{
+
+    color: #1014bc;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #1014bc;
+    background-image: url("https://raw.githubusercontent.com/suarezje/semaforosWeb/master/ClienteSemaforoWeb/web/img/Intermitentes2/Amarillo.gif");
+    width:120px;
+    height:120px; 
+}
+
+.INTERMITENTE_VERDE{
+
+    color: #1014bc;
+    font-weight: bold;
+    background-color: #000000;
+    border-color: #1014bc;
+    background-image: url("https://raw.githubusercontent.com/suarezje/semaforosWeb/master/ClienteSemaforoWeb/web/img/Intermitentes2/Verde.gif");
+    width:120px;
+    height:120px; 
+}
+
+.NEGRO_COLUMNA{
+
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.BOTON{
+
+    text-indent: -9999px;
+}
+
+.alignTop {
+vertical-align: top;
+}

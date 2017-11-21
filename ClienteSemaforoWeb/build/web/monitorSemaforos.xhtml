@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Monitor Semaforos</title>
+        <link href="#{request.contextPath}/custom.css" rel="stylesheet" media="screen" />
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <h:panelGrid id="pg" columns="2" columnClasses="alignTop,alignTop" title="MONITOR">
+                <p:panel id="pnl1" header="LINEA 1" >
+                    <p:dataTable tableStyle="width:auto" id="tbl1" var="smf1" value="#{monitorBean.listaLinea1}" rendered="#{not empty monitorBean.listaLinea1}">
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{!smf1.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf1.id}-R" styleClass="#{(smf1.rojo) ? 'ROJO' : 'NEGRO'}"/>
+                        </p:column>
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{smf1.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf1.id}-R" styleClass="#{(smf1.rojo) ? 'INTERMITENTE_ROJO' : 'NEGRO'}"/>
+                        </p:column>
+
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{!smf1.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf1.id}-A" styleClass="#{(smf1.amarillo) ? 'AMARILLO' : 'NEGRO'}"/>
+                        </p:column>
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{smf1.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf1.id}-A" styleClass="#{(smf1.amarillo) ? 'INTERMITENTE_AMARILLO' : 'NEGRO'}"/>
+                        </p:column>
+
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{!smf1.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf1.id}-V" styleClass="#{(smf1.verde) ? 'VERDE' : 'NEGRO'}"/>
+                        </p:column>
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{smf1.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf1.id}-V" styleClass="#{(smf1.verde) ? 'INTERMITENTE_VERDE' : 'NEGRO'}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </p:panel>
+                <p:panel id="pnl2" header="LINEA 2">
+                    <p:dataTable tableStyle="width:auto"  id="tbl2" var="smf2" value="#{monitorBean.listaLinea2}" rendered="#{not empty monitorBean.listaLinea2}">
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{!smf2.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf2.id}-R" styleClass="#{(smf2.rojo) ? 'ROJO' : 'NEGRO'}"/>
+                        </p:column>
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{smf2.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf2.id}-R" styleClass="#{(smf2.rojo) ? 'INTERMITENTE_ROJO' : 'NEGRO'}"/>
+                        </p:column>
+
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{!smf2.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf2.id}-A" styleClass="#{(smf2.amarillo) ? 'AMARILLO' : 'NEGRO'}"/>
+                        </p:column>
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{smf2.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf2.id}-A" styleClass="#{(smf2.amarillo) ? 'INTERMITENTE_AMARILLO' : 'NEGRO'}"/>
+                        </p:column>
+
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{!smf2.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf2.id}-V" styleClass="#{(smf2.verde) ? 'VERDE' : 'NEGRO'}" />
+                        </p:column>
+                        <p:column styleClass="NEGRO_COLUMNA" rendered="#{smf2.intermintente}">
+                            <h:commandButton style="text-indent: -9999px;" actionListener="#{monitorControlador.marcarDaño}" value="#{smf2.id}-V" styleClass="#{(smf2.verde) ? 'INTERMITENTE_VERDE' : 'NEGRO'}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </p:panel>
+            </h:panelGrid>
+
+            <p:poll interval="3" listener="#{monitorControlador.actualizarMonitor()}" update="pg" />
+
+        </h:form>
+    </h:body>
+</html>
+

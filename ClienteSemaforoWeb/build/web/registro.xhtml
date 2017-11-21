@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registro de Lineas de Semaforo</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+            <p:panelGrid columns="2" >    
+                <p:outputLabel id="lblIdCliente" value="ID Cliente"/>
+                <p:inputText id="idCliente" value="#{registroBean.idCliente}"/>
+                <p:outputLabel id="lblSemaforosL1" value="Semaforos L1"/>
+                <p:inputText id="nSemaforosL1" value="#{registroBean.semaforosL1}"/>
+                <p:outputLabel id="lblSemaforosL2" value="Semaforos L2"/>
+                <p:inputText id="nSemaforosL2" value="#{registroBean.semaforosL2}"/>
+                <p:outputLabel id="lblIp" value="IP"/>
+                <p:inputText id="ip" value="#{registroBean.ip}"/>
+                <p:outputLabel id="lblpuerto" value="Puerto"/>
+                <p:inputText id="puerto" value="#{registroBean.puerto}"/>
+            </p:panelGrid>
+            <p:commandButton id="btnEnviar" value="Enviar" action="#{registroControlador.registrarLineas()}" />
+        </h:form>
+    </h:body>
+</html>
+
